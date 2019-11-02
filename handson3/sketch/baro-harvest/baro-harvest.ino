@@ -56,7 +56,7 @@ void loop() {
 
   SerialUSB.println("### Open.");
   int connectId;
-  connectId = Wio.SocketOpen("harvest.soracom.io", 8514, WIOLTE_UDP);
+  connectId = Wio.SocketOpen("harvest.soracom.io", 8514, WIO_UDP);
   if (connectId < 0) {
     SerialUSB.println("### ERROR! ###");
     goto err;
