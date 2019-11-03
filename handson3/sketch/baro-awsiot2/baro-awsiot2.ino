@@ -12,8 +12,8 @@
 // Designing MQTT Topics for AWS IoT Core
 #define APPLICATION     "soracomug-handson"
 #define CONTEXT         "techplayshibuya"
-#define THING           "BaroDevice1"
-#define TELEMETRY_TOPIC "dt/" APPLICATION "/" CONTEXT "/" THING
+char THING[50];
+char TELEMETRY_TOPIC[200];
 
 #define INTERVAL  (5000)
 
@@ -24,6 +24,23 @@ PubSubClient MqttClient;
 
 GroveBoard Board;
 OmronBaro2SMPB02E Sensor(&Board.I2C);
+
+// Wio LTE から SORACOM Air のメタデータサービスにアクセスするコードスニペット@ma2shita
+// https://qiita.com/ma2shita/items/44cfe28d76fe0d8aa45a
+String get_metadata_by(WioLTE& wio, const char* tag_key, const char* default_value = "") {
+    char url[1024];
+    sprintf(url, "http://metadata.soracom.io/v1/subscriber.tags.%s", tag_key);
+    char buf[1024];
+    wio.HttpGet(url, buf, sizeof(buf));
+    String content = String(buf);
+    content.trim();
+    if (content == "Specified key does not exist." || /* == 404 */
+        content == "You are not allowed to access Metadata Server.") { /* == 403 */
+        content = String(default_value);
+        content.trim();
+    }
+    return content;
+}
 
 void setup() {
   delay(200);
@@ -51,6 +68,12 @@ void setup() {
     SerialUSB.println("### ERROR! ###");
     abort();
   }
+
+  SerialUSB.println("### Get thing name from meta data service.");
+  strcpy(THING, get_metadata_by(Wio, "Thing").c_str());
+  sprintf(TELEMETRY_TOPIC, "dt/%s/%s/%s", APPLICATION, CONTEXT, THING);
+  SerialUSB.print("Thing = ");
+  SerialUSB.println(THING);
   
   SerialUSB.println("### Connecting to MQTT server \"" MQTT_SERVER_HOST "\"");
   MqttClient.setServer(MQTT_SERVER_HOST, MQTT_SERVER_PORT);
