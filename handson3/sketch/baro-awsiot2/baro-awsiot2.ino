@@ -1,4 +1,4 @@
-#include <PubSubClient.h>     // https://github.com/knolleary/pubsubclient
+#include <PubSubClient.h>     // https://github.com/SeeedJP/pubsubclient
 #include <WioLTEClient.h>
 #include <GroveDriverPack.h>  // https://github.com/SeeedJP/GroveDriverPack
 
