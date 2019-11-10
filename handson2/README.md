@@ -35,7 +35,12 @@ Enterprise Button をクリックした際に SORACOM Harvest に対して位置
 
 ### ■ ユーザーコンソールへログインする
 
-[SORACOM ユーザーコンソール(SAMユーザログイン)](https://console.soracom.io/#/sam_login?coverage_type=jp) へアクセスします。SAMユーザのログイン画面が表示されるので、ボタンに付属しているカードに記載されているオペレータIDとユーザ名、パスワードを入力し、 [ログイン] ボタンをクリックしてください。  
+[SORACOM ユーザーコンソール(SAMユーザログイン)](https://console.soracom.io/#/sam_login?coverage_type=jp) へアクセスします。SAMユーザのログイン画面が表示されますので、以下の通り入力し [ログイン] ボタンをクリックしてください。
+
+|:----:|:-------------|
+| オペレータID | ボタンに付属しているカードに記載されているOPから始まる文字列 |
+| ユーザ名 | user |
+| パスワード | Sora20191102 |
 
 ![](./img/handson-2_01_SAMLogin.png)
 
