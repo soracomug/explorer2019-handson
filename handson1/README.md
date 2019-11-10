@@ -50,7 +50,7 @@ I2C 端子に 絶対圧センサーを取りつけます。
 下記の「スケッチ書き込みページをページをクリックし、手順に沿って書き込みを行ってください。
 
 [スケッチ書き込みページ](webdfu/)   
-[https://github.com/masato-ka/explorer2019-handson/handson1/webdfu](webdfu/)
+[https://masato-ka.github.com/explorer2019-handson/handson1/webdfu](webdfu/)
 
 Connect ボタンを押し、**STM32 BOOTLOADER**を選択して「接続」をクリックします。
 
