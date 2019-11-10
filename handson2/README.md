@@ -28,6 +28,7 @@
 - AWS Lambda (Pythonのサンプルコード、モジュールは準備済)
 
 AWSのアカウントをお持ちでないかたは [こちら](https://aws.amazon.com/jp/register-flow/) から作成してください。
+LINEアカウントを保有していない方、IDを忘れた方はスタッフにお知らせください。
 
 ## Harvest に Enterprise Button の位置情報とクリックタイプを保存する
 
