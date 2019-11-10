@@ -297,3 +297,17 @@ URLをクリックすると、Google Map上に位置が表示されます。
 
 5. "グループ解除" を選択します。  
    ![](./img/handson-2_43_getoutGroup2.png)
+
+### ■ 目安となる料金
+
+- SORACOM LTE-M Button for Enterprise 購入料金: **5,980 円** (参考 [https://soracom.jp/products/gadgets/enterprise_button/](https://soracom.jp/products/gadgets/enterprise_button/) )
+- SORACOM Air SIM(plan-KM1) 利用料金 (参考 [https://soracom.jp/services/air/cellular/price/#plan-km1](https://soracom.jp/services/air/cellular/price/#plan-km1))
+  - 基本料金: **100 円 / 月**
+  - データ通信: **0.5 円 / KB**
+- SORACOM Harvest 利用料金 (参考 [https://soracom.jp/services/harvest/price/](https://soracom.jp/services/harvest/price/))
+  - Harvest 利用オプション: **5 円 / 日** (無料利用枠あり)
+  - 書き込みリクエスト: **0.004 円 / リクエスト** (無料利用枠あり)
+- SORACOM Funk 利用料金 (参考 [http://soracom.jp/services/funk/price/](http://soracom.jp/services/funk/price/))
+  - 1 リクエスト: **0.0018 円 / リクエスト** (無料利用枠あり)
+- 簡易位置測位機能 利用料金
+  - 利用オプション: **50 円 / 月** 
