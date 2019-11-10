@@ -27,6 +27,8 @@
 
 - AWS Lambda (Pythonのサンプルコード、モジュールは準備済)
 
+AWSのアカウントをお持ちでないかたは [こちら](https://aws.amazon.com/jp/register-flow/) から作成してください。
+
 ## Harvest に Enterprise Button の位置情報とクリックタイプを保存する
 
 Enterprise Button をクリックした際に SORACOM Harvest に対して位置情報とクリックタイプを保存する方法を解説します。
@@ -35,7 +37,7 @@ Enterprise Button をクリックした際に SORACOM Harvest に対して位置
 
 [SORACOM ユーザーコンソール(SAMユーザログイン)](https://console.soracom.io/#/sam_login?coverage_type=jp) へアクセスします。SAMユーザのログイン画面が表示されるので、ボタンに付属しているカードに記載されているオペレータIDとユーザ名、パスワードを入力し、 [ログイン] ボタンをクリックしてください。  
 
-![](./img/handson-2_registerSORACOM_05_firstLogin.png)
+![](./img/handson-2_01_SAMLogin.png)
 
 以下のような「SIM 管理」画面が表示されたらログイン完了です。  
 
