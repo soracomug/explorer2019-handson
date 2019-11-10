@@ -37,6 +37,7 @@ Enterprise Button をクリックした際に SORACOM Harvest に対して位置
 
 [SORACOM ユーザーコンソール(SAMユーザログイン)](https://console.soracom.io/#/sam_login?coverage_type=jp) へアクセスします。SAMユーザのログイン画面が表示されますので、以下の通り入力し [ログイン] ボタンをクリックしてください。
 
+| 項目 | 入力内容 |
 |:----:|:-------------|
 | オペレータID | ボタンに付属しているカードに記載されているOPから始まる文字列 |
 | ユーザ名 | user |
