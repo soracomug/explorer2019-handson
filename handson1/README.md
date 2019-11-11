@@ -86,7 +86,7 @@ Connect ボタンを押し、**STM32 BOOTLOADER**を選択して「接続」を�
 
 書き込んだコードを知りたい方はこちらをクリックください。
 
-[絶対圧センサ読み取りコード](/sketch/baro-harvest.ino)
+[絶対圧センサ読み取りコード](/sketch/baro-harvest/baro-harvest.ino)
 
 ここまでで、デバイス側の準備が完了しました。
 
