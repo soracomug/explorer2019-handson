@@ -74,13 +74,13 @@ Connect ボタンを押し、**STM32 BOOTLOADER**を選択して「接続」を�
 
 「対応デバイスが見つかりませんでした」 が一覧に表示された場合は Wio LTE が DFU モードになっていません。 DFU モードへの移行操作をしてください。
 
-![フロー](https://docs.google.com/drawings/d/e/2PACX-1vTxepoPYMnANUwLFFHmhc6I6vFyM_aHL-eD-VFIuzAzk1ND5HLFxw093f7Qy3ccZoEc82NHvyoVaaYB/pub?w=924&h=469)
+![フロー](media/connect-device-01.png)
 
-![フロー](https://docs.google.com/drawings/d/e/2PACX-1vRqDKcttYBSi-f9uHFkOa5f-DKWIwafpvZExjS_SKInhhK4L4Rv3cHmwuHtZAZoeKfGn9iD-NzYm1mg/pub?w=480&h=360)
+![フロー](media/connect-device-02.png)
 
 「【絶対圧センサ】を書き込む」をクリックして、スケッチ例を書き込みます。
 
-![フロー](https://docs.google.com/drawings/d/e/2PACX-1vQPJgqVL27iP9fttdDO9tneBADtHXc6bd1oEcfWo0BDIu29fcvKw3V632ttvzg3VIU0Van47iQgXn7D/pub?w=927&h=467)
+![フロー](media/write-program-01.png)
 
 書き込みが完了したら、WioLTEのリセットスイッチを押して、DFUモードを終了します。
 
