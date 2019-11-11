@@ -6,14 +6,29 @@
 各自の机の上に、本日必要な機材を用意しています。
 * パソコン(お持ち込み品)
     * 事前に案内済みの [セットアップ](setup) が完了していること
-* 有効なSORACOMアカウント（すでにソラコム側でアカウントを作成済みです）
-* SORACOMアカウントに登録済みの SORACOM Air SIM （すでにWio LTEの中に入っています）
+* 有効なSORACOMアカウント（まだの方は作成ください）
+    * [ソラコムアカウントの作り方](https://dev.soracom.io/jp/start/console/#account)
+* SORACOM Air SIM 
+    * [SIMの登録情報](https://dev.soracom.io/jp/start/console/#registsim)
 * [Grove IoT スターターキット for SORACOM](https://soracom.jp/products/#grovestarter_kit)
 * [絶対圧センサ](https://www.switch-science.com/catalog/5329/)
 
 ![機材](https://docs.google.com/drawings/d/e/2PACX-1vQDtAOALHo8MhG_Hr1LUfVJvOfrVJjOslUvKhTvGKmcQ1KH849J-RsXl3VXsuTCytJJceyVkG3Rjlbl/pub?w=757&h=540)
 
-## DFUモードへの切り替え方
+
+## ハンズオン前の準備
+
+### SORACOM Air SIMを利用するための準備
+
+このハンズオンではSORACOM　Air SIMを使い、ソラコムのサービスを利用します。そのために、有効なSORACOMアカウントと、配布したSORACOM Air SIMのアクティベーションが必要です。
+
+1. 有効なSORACOM アカウントをお持ちでない方は以下のページを参考にアカウントを作成してください。
+    * [ソラコムアカウントの作り方](https://dev.soracom.io/jp/start/console/#account)
+
+2. 配布したSORACOM Air SIMカードを１で作成したアカウントを用いてアクティベーションしてください。
+    * [SIMの登録情報](https://dev.soracom.io/jp/start/console/#registsim)
+
+### DFUモードへの切り替え方
 
 Wio LTE は２つのモードを持っています。  
 **この操作は Wio LTE の開発で何度も行うことになりますので、必ず覚えてください**
@@ -64,21 +79,49 @@ Connect ボタンを押し、**STM32 BOOTLOADER**を選択して「接続」を�
 
 ![フロー](https://docs.google.com/drawings/d/e/2PACX-1vQPJgqVL27iP9fttdDO9tneBADtHXc6bd1oEcfWo0BDIu29fcvKw3V632ttvzg3VIU0Van47iQgXn7D/pub?w=927&h=467)
 
+書き込みが完了したら、WioLTEのリセットスイッチを押して、DFUモードを終了します。
+
 書き込んだコードを知りたい方はこちらをクリックください。
 
 [絶対圧センサ読み取りコード](/sketch/baro-harvest.ino)
 
-### 3. SORACOM Harvest で絶対圧センサの値を可視化します。
+ここまでで、デバイス側の準備が完了しました。
 
-ソラコムのアカウントにログインします。
+### 3. SIMにSIMグループを割り当てる
+
+ここからはSORACOMユーザーコンソールからSIMの設定を行います。
+
+ソラコムのアカウントにログインしてSORACOMユーザコンソールを表示します。
 
 [アカウントログインページ](https://console.soracom.io/#/?coverage_type=jp)  
 [https://console.soracom.io/#/?coverage_type=jp](https://console.soracom.io/#/?coverage_type=jp)
 
-ログイン情報はPC横の紙をご覧ください。
-メールアドレス、パスワードを入力し、ログインをクリックします。
-
 ![フロー](https://docs.google.com/drawings/d/e/2PACX-1vTy5KORqQjieOg-ijF5CLyfhALMq-CmE8G9822NahydZSw5zIYqcz4efiru6R5n1RjAEaotdmfNmXsN/pub?w=444&h=250)
+
+
+SORACOMユーザーコンソールで、`Menu > SIMグループ`を選択して、`+追加`をクリックしてください。
+
+![1 5](media/1-5.png)
+
+
+グループ名を「soracomug-handson」にして、`グループ作成`をクリックしてください。
+
+![1 6](media/1-6.png)
+
+作成したグループが表示されれば成功です。
+
+![1 7](media/1-7.png)
+
+(TODO:SIMにSIMグループを割り当て)
+
+### 4. SIMグループのSORACOM Harvestを有効にする
+
+「soracomug-handson」SIMグループのSORACOM Harvest設定を「ON」にして、`保存`をクリックしてください。
+
+![1 8](media/1-8.png)
+
+
+### 5. SORACOM Harvest の確認
 
 SIMを選択し、「操作」からデータを確認を選びます。
 
