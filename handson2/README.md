@@ -7,6 +7,8 @@
 - Enterprise Button のクリックされた位置とクリック種別（シングルクリック、ダブルクリック、長押し）を SORACOM Harvest で可視化する
 - Enterprise Button のクリックされた位置の情報を SORACOM Funk 経由でLINEに通知する (URLをクリックすると地図が表示される) 
 
+※ LINEをご利用でない方、ID/パスワードがわからない方は [メール送信版](./README-mail.md) をご利用ください。
+
 ### アーキテクチャ
 
 ![](./img/handson-2_00_arch.png)
