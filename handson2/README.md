@@ -112,9 +112,9 @@ Harvest 上のデータを以下の手順で確認します。
 
 <img src="./img/handson-2_17_refreshHarvest.png">
 
-## 位置情報とクリックタイプを SORACOM Funk 経由で LINE に通知する
+## 位置情報を SORACOM Funk 経由で LINE に通知する
 
-Enterprise Button から SORACOM Funk と AWS Lambda を介して クリックされた位置の情報とクリックタイプを LINE へ通知する方法を解説します。
+Enterprise Button から SORACOM Funk と AWS Lambda を介して クリックされた位置の情報を LINE へ通知する方法を解説します。
 
 ### ■ LINE Notifyを設定する
 
