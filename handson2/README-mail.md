@@ -292,10 +292,10 @@ def push_email(source,destination,subject,body):
 2. "SORACOM Funk 設定" を開き、"ON" にし、先ほど登録した認証情報やコピーした Lambda の ARN を入力して "保存" をクリックします。  
    ![](./img/handson-2_38_enableFunk.png)
 
-### ■ Enterprise Button を押して LINE 通知を確認する
+### ■ Enterprise Button を押して メール通知 を確認する
 
 ここまでで設定が完了しました。
-ボタンを押すと、自分のスマートフォンのLINEに通知が来るはずです。
+ボタンを押すと、設定したメールアドレスに通知が来るはずです。
 URLをクリックすると、Google Map上に位置が表示されます。
 （基地局情報を基準としているため、誤差があります）
 
