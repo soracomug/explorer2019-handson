@@ -5,13 +5,13 @@
 本ハンズオンでは以下の内容を作成します。
 
 - Enterprise Button のクリックされた位置とクリック種別（シングルクリック、ダブルクリック、長押し）を SORACOM Harvest で可視化する
-- Enterprise Button のクリックされた位置の情報を SORACOM Funk 経由で `メールで` 通知する (URLをクリックすると地図が表示される) 
+- Enterprise Button のクリックされた位置の情報を SORACOM Funk 経由でメールで通知する (URLをクリックすると地図が表示される) 
 
 ※ LINEで通知する版は [こちら](./README.md) です。
 
 ### アーキテクチャ
 
-![](./img/handson-2_00_arch.png)
+![](./img/handson-2_00_arch-mail.png)
 
 ### 必要なもの
 
@@ -23,11 +23,10 @@
 
 - SORACOM (本ハンズオンではソラコムからの貸与となります)
 - AWS
-- LINE
 
 このドキュメントを進めるにあたり以下の知識が必要となります。
 
-- AWS Lambda (Pythonのサンプルコード、モジュールは準備済)
+- AWS Lambda (Pythonのサンプルコードは準備済)
 
 AWSのアカウントをお持ちでないかたは [こちら](https://aws.amazon.com/jp/register-flow/) から作成してください。
 LINEアカウントを保有していない方、IDを忘れた方はスタッフにお知らせください。
@@ -126,13 +125,17 @@ Amazon SESからメールが発信できるよう、設定を行います。
 　　※東京リージョンでは提供されていないため、Oregonを指定しています。
 
 2. メニューの `Email Addresses` を開き、 `Verify a New Email Address`をクリックします
+   ![](./img/handson-2_51_amazonses1.png)  
 
 3. Verify a New Email Addressのダイアログが開きます。ご自身のメールアドレス（通知先）を入力し、`Verify This Email Address`をクリックします。
+   ![](./img/handson-2_52_amazonses2.png)  
 
 4. Verification Email Sent と表示されます。`Close` をクリックします。
+   ![](./img/handson-2_53_amazonses3.png)  
 
 5. 設定したメールアドレスに通知メールが届きます。メール本文中に記載のURLにアクセスすると認証が完了します。
 　 Verification Statusが **verified** になったことを確認します。
+   ![](./img/handson-2_54_amazonses4.png)  
 
 ### ■ Amazon IAMの設定
 
@@ -142,21 +145,29 @@ Lambda関数からメールが送信できるロールを作成します。
    ![](./img/handson-2_27_createPolicy1.png)  
 
 2. サービスに `ses` と入力し、アクションに `SendEmail`と`SendRawEmail`を選択します。
+   ![](./img/handson-2_55_sesrole1.png)  
 
-3. リソースには `すべてのリソース` を選択します。
+3. リソースには `すべてのリソース` を選択し、`ポリシーの確認` をクリックします。
+   ![](./img/handson-2_56_sesrole2.png)  
 
 4. ポリシー名に任意の名前を入力し、`ポリシーの作成`ボタンをクリックします。
+   ![](./img/handson-2_57_sesrole3.png)  
 
 5. 続けてロールの作成を行います。
 　 `ロール` メニューから `ロールの作成`をクリックします。
+   ![](./img/handson-2_58_sesrole4.png)  
 
 6. ”このロールを使用するサービスを選択” から `Lambda` を選択し、次のステップに進みます。
+   ![](./img/handson-2_59_sesrole5.png)  
 
 7. "Attachアクセス権限ポリシー" から、上記で作成したポリシーを選択します。
+   ![](./img/handson-2_60_sesrole6.png)  
 
 8. タグが不要ですので、確認ボタンをクリックします。
+   ![](./img/handson-2_61_sesrole7.png)  
 
 9. 最後にロール名を入力し `ロールの作成` ボタンをクリックします。
+   ![](./img/handson-2_62_sesrole8.png)  
 
 ### ■ AWS Lambda を設定する
 
@@ -169,13 +180,12 @@ Lambda関数からメールが送信できるロールを作成します。
 
 3. 作成方法は `１から作成` を選択します。
 続けて任意の関数名をつけ、ランタイムに `Python 3.7` を選択、実行ロールに `既存のロールを使用する` とし、ロール名に上記で作成したロールを指定します。  
-   ![](./img/handson-2_23_lambda1.png)
+   ![](./img/handson-2_63_createlambda1.png)
 
 5. 関数が作成されました。関数の編集画面が開きますので、下記のソースコードを貼り付けます。
-   ![](./img/handson-2_24_lambda2.png)
 
 6. 環境変数 `src_mail` `dst_mail` に送信元メールアドレス、送信先メールアドレスを入力して、画面一番上の `保存` をクリックします。  
-   ![](./img/handson-2_25_lambda3.png)
+   ![](./img/handson-2_64_createlambda2.png)
 
 7. Lambda の ARN をコピーしてメモ帳などに写しておきます。
    ![](./img/handson-2_26_copyARN.png)
@@ -299,7 +309,7 @@ def push_email(source,destination,subject,body):
 URLをクリックすると、Google Map上に位置が表示されます。
 （基地局情報を基準としているため、誤差があります）
 
-![](./img/handson-2_39_locationnotify.png)
+![](./img/handson-2_65_locationnotify-mail.png)
 
 確認できない場合は、Lambda のメトリックにて「ログが出ているか」「エラーが出ていないか」を確認してください。
 
