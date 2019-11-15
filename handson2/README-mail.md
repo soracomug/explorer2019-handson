@@ -113,7 +113,7 @@ Harvest 上のデータを以下の手順で確認します。
 
 <img src="./img/handson-2_17_refreshHarvest.png">
 
-## 位置情報をSORACOM Funk 経由で `メールで` 通知する
+## 位置情報をSORACOM Funk 経由で`メールで`通知する
 
 Enterprise Button から SORACOM Funk と AWS Lambda を介して クリックされた位置の情報をメールで通知する方法を解説します。
 
@@ -136,6 +136,8 @@ Amazon SESからメールが発信できるよう、設定を行います。
 5. 設定したメールアドレスに通知メールが届きます。メール本文中に記載のURLにアクセスすると認証が完了します。
 　 Verification Statusが **verified** になったことを確認します。
    ![](./img/handson-2_54_amazonses4.png)  
+
+※送信元と送信先のメールアドレスを別にする場合は両方の登録が必要です
 
 ### ■ Amazon IAMの設定
 
