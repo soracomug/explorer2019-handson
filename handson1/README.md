@@ -133,7 +133,7 @@ SIMを選択し、「操作」からデータを確認を選びます。
 SORACOM Harvet Dataの画面が開きます。しばらく待つと絶対圧センサーの値がグラフになって表示されます。
 絶対圧センサの高さを変えて、気圧の変化を計測しましょう。
 
-![parking](https://docs.google.com/drawings/d/e/2PACX-1vSSa_HTsUnGurBhtTo0UTDry01HDujPAx1CNybl2nkvOsdGtqNmYYSpOI8dsMtNxl8w0yEoVDb4XYe_/pub?w=937&h=441)
+![pressure](media/1-10.png)
 
 ## 片付け
 これでハンズオンは終了です。最後まで終わった方は、センサーを外し元あった場所にお戻しください。
